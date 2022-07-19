@@ -1,0 +1,77 @@
+// USER VARIABLES SECTION
+@accent: #D37321;
+@white: #ffffff;
+@grey: #D9D9D9;
+@black: #1E2024;
+
+
+
+@fontsize: 18px; // Body Font Size
+@lineheight: 1.7; // Document Line Height
+
+@userfont: 'Inter', sans-serif;
+@systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+
+.reset();
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+// .debugGrid{
+// 	.debug(rgba(0, 0, 0, 0.3), 1px #ff0 solid);
+// }
+
+.container {
+	.wrapper();
+}
+
+// @font-face {
+//     font-family: 'Open Sans';
+//     src: url('../fonts/OpenSans-Regular.eot');
+//     src: url('../fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+//         url('../fonts/OpenSans-Regular.woff') format('woff'),
+//         url('../fonts/OpenSans-Regular.ttf') format('truetype');
+//     font-weight: 400;
+//     font-style: normal;
+// }
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+body {
+	font-family: @userfont;
+	font-size: @fontsize;
+	line-height: @lineheight;
+	font-weight: 400;
+	color: @black;
+	text-rendering: optimizeSpeed;
+	position: relative;
+
+	padding-top: 47px;
+	padding-bottom: 47px;
+
+	.md-block({
+		padding-top: 41px;
+		padding-bottom: 37px;
+	});
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитают их не использовать */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+// Remove all mouse-triggered focus styles without breaking keyboard accessibility
+*:focus:not(:focus-visible) {
+	outline: none !important;
+}
