@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const del = require('del');
-const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
@@ -11,6 +10,7 @@ const browserSync = require('browser-sync').create();
 const smartGrid = require('smart-grid');
 const path = require('path');
 const rigger = require('gulp-rigger');
+const uglify = require('gulp-uglify-es').default;
 const ghPages = require('gh-pages');
 
 let isMap = process.argv.includes('--map');
@@ -29,14 +29,14 @@ function html() {
 }
 
 function styles() {
-	return gulp.src('./src/css/styles.less')
+	return gulp.src('./src/less/styles.less')
 		.pipe(gulpIf(isMap, sourcemaps.init()))
 		.pipe(less())
 		.pipe(gcmq())
 		.pipe(autoprefixer())
-		// .pipe(gulpIf(isMinify, cleanCSS({
-		// 	level: 2
-		// })))
+		.pipe(gulpIf(isMinify, cleanCSS({
+			level: 2
+		})))
 		.pipe(gulpIf(isMap, sourcemaps.write()))
 		.pipe(gulp.dest('./build/css'))
 		.pipe(gulpIf(isSync, browserSync.stream()));
@@ -45,6 +45,9 @@ function styles() {
 function scripts() {
 	return gulp.src('./src/js/scripts.js')
 		.pipe(rigger())
+		.pipe(gulpIf(isMinify, uglify({
+			toplevel: true
+		})))
 		.pipe(gulp.dest('./build/js'))
 		.pipe(gulpIf(isSync, browserSync.stream()));
 }
@@ -69,7 +72,7 @@ function watch() {
 		});
 	}
 
-	gulp.watch('./src/css/**/*.less', styles);
+	gulp.watch('./src/less/**/*.less', styles);
 	gulp.watch('./src/js/**/*.js', scripts);
 	gulp.watch('./src/**/*.html', html);
 	gulp.watch('./src/img/**/*', images);

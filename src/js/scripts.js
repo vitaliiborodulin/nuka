@@ -1,8 +1,5 @@
-$('body').on('click', '.navigation a[href*="#"]', function(e) {
-	// e.preventDefault();
-	var fixed_offset = 30;
+$(function() {
+	//= components/sticky-menu.js
 
-	$('html,body').stop().animate({
-			scrollTop: $(this.hash).offset().top - fixed_offset
-	}, 300);
+	//= components/choise.js
 });

@@ -9,6 +9,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -25,18 +26,67 @@
 			<ul class="banner__list">
 
 				<li>
-					<img class="banner__desc" src="img/banner-1.jpg" alt="">
-					<img class="banner__mob" src="img/banner-1m.jpg" alt="">
+					<a class="banner__popup" href="javascript:;" data-fancybox data-src="#banner-popup1">
+						<picture>
+							<source srcset="img/banner-1m.jpg" media="(max-width: 576px)">
+							<img src="img/banner-1.jpg" alt="">
+						</picture>
+					</a>
+					<div class="popup" id="banner-popup1" style="display: none;">
+						<div class="popup__inner">
+								<picture class="popup__image">
+									<source srcset="img/banner-1m.jpg" media="(max-width: 576px)">
+									<img src="img/banner-1.jpg" alt="">
+								</picture>
+								<div class="popup__text">
+									<h3 class="popup__header">Заголовок акции 1</h3>
+									<div class="popup__descr">
+										<p>В любой акции должен быть веский побудительный мотив, чтобы люди отложили текущие дела, поспешили принять участие. Если просто обещан подарок вместе с какой-либо покупкой, это не вызовет интерес. Покупатели подумают, что получат незначительную ерунду, от которой магазину надобно избавиться.</p>
+										<p>Поэтому предложение следует донести так, чтобы люди сильно захотели поучаствовать в мероприятии, несмотря на предстоящие траты.</p>
+										<p><b>Рекламные акции компаний включают три компонента:</b></p>
+										<ul>
+											<li>Заманчивое предложение, обещающее выгоду.</li>
+											<li>Ограничитель по срокам или иным критериям.</li>
+											<li>Убедительный призыв к действию, перед которым сложно устоять.</li>
+										</ul>
+									</div>
+								</div>
+						</div>
+					</div>
 				</li>
 
 				<li>
-					<img class="banner__desc" src="img/banner-2.jpg" alt="">
-					<img class="banner__mob" src="img/banner-2m.jpg" alt="">
+					<a class="banner__popup" href="javascript:;" data-fancybox data-src="#banner-popup2">
+						<picture>
+							<source srcset="img/banner-2m.jpg" media="(max-width: 576px)">
+							<img src="img/banner-2.jpg" alt="">
+						</picture>
+					</a>
+					<div class="popup" id="banner-popup2" style="display: none;">
+						<div class="popup__inner">
+								<h3 class="popup__header">Заголовок акции 2</h3>
+								<div class="popup__descr">
+									<p>В любой акции должен быть веский побудительный мотив, чтобы люди отложили текущие дела, поспешили принять участие. Если просто обещан подарок вместе с какой-либо покупкой, это не вызовет интерес. Покупатели подумают, что получат незначительную ерунду, от которой магазину надобно избавиться.</p>
+								</div>
+						</div>
+					</div>
 				</li>
 
 				<li>
-					<img class="banner__desc" src="img/banner-3.jpg" alt="">
-					<img class="banner__mob" src="img/banner-3m.jpg" alt="">
+					<a class="banner__popup" href="javascript:;" data-fancybox data-src="#banner-popup3">
+						<picture>
+							<source srcset="img/banner-3m.jpg" media="(max-width: 576px)">
+							<img src="img/banner-3.jpg" alt="">
+						</picture>
+					</a>
+					<div class="popup" id="banner-popup3" style="display: none;">
+						<div class="popup__inner">
+								<h3 class="popup__header">Заголовок акции 3</h3>
+								<div class="popup__descr">
+									<p>В любой акции должен быть веский побудительный мотив, чтобы люди отложили текущие дела, поспешили принять участие. Если просто обещан подарок вместе с какой-либо покупкой, это не вызовет интерес. Покупатели подумают, что получат незначительную ерунду, от которой магазину надобно избавиться.</p>
+								</div>
+						</div>
+					</div>
 				</li>
 
 			</ul>
@@ -83,6 +133,7 @@
 	</section>
 
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 	<script src="js/scripts.js"></script>
 </body>
 

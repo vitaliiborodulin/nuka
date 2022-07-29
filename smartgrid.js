@@ -15,10 +15,10 @@ module.exports = {
 		},
 		sm: {
 			width: "576px",
+			fields: "10px"
 		},
 		xs: {
 			width: "320px",
-			fields: "15px"
 		}
 	}
 }

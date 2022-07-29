@@ -1,0 +1,50 @@
+.popup {
+	max-width: 700px;
+	.sm(padding, 20px);
+
+	&__inner {
+		.row-flex();
+		align-items: flex-start;
+	}
+
+	&__image {
+		.col();
+		.size(5);
+		.size-sm(12);
+		margin-bottom: 22px;
+	}
+
+	&__text {
+		.col();
+		.size(7);
+		.size-sm(12);
+	}
+
+	&__header {
+		margin-bottom: 25px;
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 29px;
+		color: @accent;
+
+		.sm-block({
+			margin-bottom: 13px;
+			font-size: 15px;
+			line-height: 18px;
+		});
+	}
+
+	&__descr {
+		font-size: 14px;
+		.sm(font-size, 12px);
+
+		p, ul {
+			margin-bottom: 10px;
+		}
+
+		li {
+			list-style: disc;
+			list-style-position: inside;
+		}
+	}
+}
